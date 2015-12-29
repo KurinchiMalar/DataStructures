@@ -5,11 +5,21 @@ def swap(Ar,x,y):
     Ar[x] = Ar[y]
     Ar[y] = temp
 
-def partition(Ar,low,high):
+def partition_LowToHigh(Ar,low,high):
     pivot = low
     swap(Ar,pivot,high)
     for i in range(low,high+1):
         if Ar[i] < Ar[high]:
+            swap(Ar,i,low)
+            low = low + 1
+    swap(Ar,low,high)
+    return low
+
+def partition_HighToLow(Ar,low,high):
+    pivot = low
+    swap(Ar,pivot,high)
+    for i in range(low,high+1):
+        if Ar[i] > Ar[high]:
             swap(Ar,i,low)
             low = low + 1
     swap(Ar,low,high)
@@ -55,19 +65,34 @@ It is like (not very accurate)
 
 n + 1/2 n + 1/4 n + 1/8 n + ..... < 2 n
 '''
-def quick_select(Ar,first,last,k):
+def quick_select_kthsmallest(Ar,first,last,k):
 
     #say pivot = 3 ... it means 0,1,2,3....it is the 4th smallest....pivot-first+1 = 3-0+1
-    pivot = partition(Ar,first,last)
+    pivot = partition_LowToHigh(Ar,first,last)
 
     if k < (pivot-first+1): #go in left half
-        return quick_select(Ar,first,pivot,k)
+        return quick_select_kthsmallest(Ar,first,pivot,k)
 
     elif k > (pivot-first+1): #go in right half
-        return quick_select(Ar,pivot+1,last,k-(pivot-first+1))
+        return quick_select_kthsmallest(Ar,pivot+1,last,k-(pivot-first+1))
 
     else:
-        #print Ar[pivot]
+        #print pivot
+        return Ar[pivot]
+
+def quick_select_kthlargest(Ar,first,last,k):
+
+    #say pivot = 3 ... it means 0,1,2,3....it is the 4th smallest....pivot-first+1 = 3-0+1
+    pivot = partition_HighToLow(Ar,first,last)
+
+    if k < (pivot-first+1): #go in left half
+        return quick_select_kthlargest(Ar,first,pivot,k)
+
+    elif k > (pivot-first+1): #go in right half
+        return quick_select_kthlargest(Ar,pivot+1,last,k-(pivot-first+1))
+
+    else:
+        #print pivot
         return Ar[pivot]
 
 
@@ -75,3 +100,4 @@ def quick_select(Ar,first,last,k):
 Ar = [4,2,5,7,12,10,11]
 
 #print quick_select(Ar,0,len(Ar)-1,7)
+print quick_select_kthlargest(Ar,0,len(Ar)-1,7)
