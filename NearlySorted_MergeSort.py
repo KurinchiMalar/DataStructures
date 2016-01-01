@@ -4,6 +4,24 @@
 # every n/k elem group is given to mergesort
 
 # Hence totally O(nlogk)
+'''
+k = 3
+4 5 9 | 7 8 3 | 1 2 6
+
+1st merge sort all blocks
+4 5 9 | 3 8 9 | 1 2 6
+
+Time Complexity = O(n * (n/k) log k)
+i.e to sort k numbers is k * log k
+to sort n/k such blocks = (n/k) * k log k = n log k
+
+2nd start merging two blocks at a time
+i.e
+to merge k + k elements 2k log k
+to merge 2k + k elements 3k log k
+similarly it has to proceed until qk + k = n, so it becomes n log k
+where q = (n/k) - 1
+'''
 from MergeSort import mergesort
 
 def split_into_groups_of_size_k(Ar,k):
