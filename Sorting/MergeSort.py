@@ -71,9 +71,11 @@ def mergesort(Ar):
         print "...Ar["+str(k)+"] - "+str(Ar[k])
         j=j+1
         k=k+1
+    return Ar
 
-Ar = [5,2,4,1,7,3,9]
+# = [5,2,4,1,7,3,9]
+'''Ar = [6,4,9,2,1,4,3,8,0,12,5]
 
-mergesort(Ar)
+print "output"+str(mergesort(Ar))'''
 
-print "Array:"+str(Ar)
+
