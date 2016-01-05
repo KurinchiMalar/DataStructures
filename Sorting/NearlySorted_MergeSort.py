@@ -44,9 +44,13 @@ def merge_two_lists(list1,list2):
     return list1
 
 Ar = [6,9,10,1,2,3,5]
+
+Ar = [8,9,10,1,2,3,6,7]
+
+Ar = [8,9,10,1,2,3]
 print Ar
 
-split_blocks = split_into_groups_of_size_k(Ar,2)
+split_blocks = split_into_groups_of_size_k(Ar,3)
 
 print str(split_blocks)
 
