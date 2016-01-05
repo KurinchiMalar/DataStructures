@@ -40,8 +40,8 @@ def mergesort(Ar):
     middle = len(Ar)//2
     lefthalf = Ar[:middle]
     righthalf = Ar[middle:]
-    print "lefthalf:"+str(lefthalf)
-    print "righthalf:"+str(righthalf)
+    #print "lefthalf:"+str(lefthalf)
+    #print "righthalf:"+str(righthalf)
 
     mergesort(lefthalf)
     mergesort(righthalf)
@@ -57,18 +57,18 @@ def mergesort(Ar):
         else:
             Ar[k] = righthalf[j]
             j = j+1
-        print "...Ar["+str(k)+"] - "+str(Ar[k])
+        #print "...Ar["+str(k)+"] - "+str(Ar[k])
         k = k+1
 
     while i < len(lefthalf):
         Ar[k] = lefthalf[i]
-        print "...Ar["+str(k)+"] - "+str(Ar[k])
+        #print "...Ar["+str(k)+"] - "+str(Ar[k])
         i=i+1
         k=k+1
 
     while j < len(righthalf):
         Ar[k] = righthalf[j]
-        print "...Ar["+str(k)+"] - "+str(Ar[k])
+        #print "...Ar["+str(k)+"] - "+str(Ar[k])
         j=j+1
         k=k+1
     return Ar
