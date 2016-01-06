@@ -12,12 +12,15 @@ def check_duplicates_bruteforce(Ar):
 
 # Sorting Solution
 # Complexity - O(nlogn) + O(n) = O(nlogn)
+
+# Worst case : say input with no duplicates --> O(nlogn) + O(n*n) = O(n*n)
 def check_duplicates_sorting(Ar):
     tempAr = Ar[:] # taking copy just for implementation purpose , not to corrupt orig...python will always point by reference.
     tempAr = MergeSort.mergesort(tempAr)
     for i in range(0,len(tempAr)):
-        if Ar[i] == Ar[i+1]:
-            return Ar[i]
+        for j in range(i+1,len(tempAr)):
+            if Ar[i] == Ar[j]:
+                return Ar[i]
     return -1
 
 #Hashing Solution - Initially value at indices zero.Increment on occurences. On insert at index if already 1. stop and return--> Duplicate
@@ -54,8 +57,9 @@ def check_duplicates_hashing_negate(Ar,n):
 
 Ar = [33,2,10,20,22,32]
 Ar = [3,2,1,2,2,3]
-print("Duplicates_BruteForce:"+str(check_duplicates_bruteforce(Ar)))
+Ar = [5,4,3,2,1]
+#print("Duplicates_BruteForce:"+str(check_duplicates_bruteforce(Ar)))
 print("Duplicates_Sorting:"+str(check_duplicates_sorting(Ar)))
-print("Duplicates_Hashing:"+str(check_duplicates_hashing(Ar,3)))  # n = 3 ==> 0,1,2,3 .... create Ar[4]
-temp = Ar[:]
-print("Duplicates_Negate:"+str(abs(check_duplicates_hashing_negate(temp,3))))
+#print("Duplicates_Hashing:"+str(check_duplicates_hashing(Ar,3)))  # n = 3 ==> 0,1,2,3 .... create Ar[4]
+#temp = Ar[:]
+#print("Duplicates_Negate:"+str(abs(check_duplicates_hashing_negate(temp,3))))
