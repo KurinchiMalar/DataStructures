@@ -16,7 +16,7 @@ def find_two_elements_sumclosest_to_zero_bruteforce(Ar):
     min_sum = sys.maxint
     elem1 = 0
     elem2 = 0
-    for i in range(0,len(Ar)):
+    for i in range(0,len(Ar)-1):
         for j in range(i+1,len(Ar)):
             print "------------------------------"
             print ("...."+str(Ar[i])+ ","+ str(Ar[j]))
