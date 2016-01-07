@@ -1,5 +1,3 @@
-
-
 # BruteForce Solution with two for loops
 # Complexity - O(n*n)
 from Sorting import MergeSort
