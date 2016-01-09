@@ -9,7 +9,7 @@
 #And get all the elements less than it.
 #Output the sorted list of final set of elements.
 #This operation takes O(n + KlogK)
-from QuickSelect_kth import quick_select_kthlargest
+from kthLargestSmallest_QuickSelect import quick_select_kthlargest
 from HeapSort import Heap
 ob = Heap()
 

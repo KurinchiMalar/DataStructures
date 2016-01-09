@@ -75,7 +75,7 @@ def insert_in_bst_iterative(root,node):
                 max_elem = root
             break
 
-        elif node.key < root.key: # even if equal insert...we are inserting with duplicates.
+        elif node.key < root.key:
             if root.left is None:
                 root.left = node
                 break
@@ -160,12 +160,12 @@ def get_repeated_hashing(Ar,k):
 #Ar = [4,6,3,5,1,5,3,5,6,1,5,3,3,5]
 #get_max_repeated_element_SortAndScan(Ar)
 
-#Ar = [80,30,90,80,90,80,70,90,80]
-#r = create_bst(Ar)
-#print "result"+str(r.key)
+Ar = [80,30,90,80,90,80,70,90,80]
+r = create_bst(Ar)
+print "result"+str(r.key)
 
 #inorder_bst(r)
 
-Ar = [8,4,3,3,8,1,8,5]
-get_repeated_hashing(Ar,8)
+#Ar = [8,4,3,3,8,1,8,5]
+#get_repeated_hashing(Ar,8)
 
