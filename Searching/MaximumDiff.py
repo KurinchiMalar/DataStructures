@@ -81,6 +81,30 @@ def find_max_diff_diffarrayMethod(Ar):
 
     return max_diff
 
+
+# Time Complexity - O(n)
+# Space Complexity - O(1)
+
+def find_max_diff_diffarrayMethod_without_diffAr(Ar):
+
+    diff = Ar[1] - Ar[0]
+    cur_diff = diff
+    max_diff = cur_diff
+
+    # diff_Ar[i] ==> diff
+    # diff_Ar[i-1] ==> cur_diff
+    for i in range(1,len(Ar)-1):
+        diff = Ar[i+1] - Ar[i]   # diff of Ar[2],Ar[1] stored at diff_Ar[1]
+        if cur_diff > 0:
+            cur_diff = cur_diff + diff
+        else:
+            cur_diff = diff
+
+        if cur_diff > max_diff:
+            max_diff = cur_diff
+
+    return max_diff
+
 Ar = [2,3,10,6,4,8,1]
 print Ar
 Ar = [7,9,5,6,3,2]
@@ -89,4 +113,5 @@ Ar = [7,9,5,6,3,2]
 
 #print ""+str(find_max_diff_bruteforce(Ar))
 #print ""+str(find_max_diff_minelemMethod(Ar))
-print ""+str(find_max_diff_diffarrayMethod(Ar))
+#print ""+str(find_max_diff_diffarrayMethod(Ar))
+print ""+str(find_max_diff_diffarrayMethod_without_diffAr(Ar))
