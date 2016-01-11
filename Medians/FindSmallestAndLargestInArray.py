@@ -4,8 +4,17 @@ import sys
 
 # Time Complexity : O(n)
 
-# Worst Case number of comparisons : 2(n-1).   For every element we are making two comparisons.
 # Space Complexity : O(1)
+
+'''
+Number of Comparisons:
+
+ Worst Case : 2(n-1). Descending Array.  For every element we are making two comparisons.
+
+ Best Case : n-1 . Ascending Array . Only if Ar[i] < min_elem will be happening.
+
+ Average Case : 3n/2 -1
+'''
 
 def get_MinMax(Ar):
 
