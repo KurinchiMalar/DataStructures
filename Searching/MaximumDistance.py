@@ -1,3 +1,4 @@
+__author__ = 'kurnagar'
 '''
 Given an array arr[] , find the maximum distance of indices such that arr[j] > arr[i].
 
