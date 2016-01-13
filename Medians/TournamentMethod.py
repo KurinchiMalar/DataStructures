@@ -2,7 +2,8 @@
 Give an algorithm to find the second smallest element
 '''
 
-# Number of Comparisons : n + log n - 2
+# Number of Comparisons for first minimum : n + log n - 1
+# Number of Comparisons for second minimum : n + log n - 1 (leaving the first minimum)
 
 def get_smallest_tournament_method(Ar):
 
