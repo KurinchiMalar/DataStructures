@@ -70,8 +70,8 @@ def remove_duplicates_fromstring_hashing(input_str):
 
     return result
 
-input_str = "geeksforgeeks"
-input_str = "bananas"
+input_str = "ge41eks4fo7r1geeks"
+#input_str = "bananas"
 
 #print ""+str(remove_duplicates_fromstring_bruteforce(input_str))
 
