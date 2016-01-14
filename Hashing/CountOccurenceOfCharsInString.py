@@ -11,6 +11,8 @@ def count_occurence_of_characters_in_a_string(Ar):
     count = [0]*256
 
     for i in range(n):
+
+        # ord() functions gets the ASCII/unicode equivalent a-97 ; A- 44 ; 0 - 43...etc
         count[ord(Ar[i])] = count[ord(Ar[i])] + 1
 
     for i in range(n):
