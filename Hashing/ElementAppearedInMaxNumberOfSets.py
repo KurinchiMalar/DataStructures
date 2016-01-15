@@ -20,7 +20,8 @@ def find_element_which_appeared_in_max_sets(input_set):
 
     # count the frequencies
     for pair in input_set:
-        for elem in pair:
+        for elem in pair:  # hash_table[elem] = hash_table.get(elem,0) + 1   .....dict.get(key, default=None)
+                           # default -- This is the Value to be returned in case key does not exist.
             if elem in hash_table:
                 hash_table[elem] = hash_table[elem] + 1
             else:
