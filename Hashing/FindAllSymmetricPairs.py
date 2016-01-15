@@ -17,7 +17,10 @@ def find_all_symmetric_pairs(inp_dic):
 
 def find_all_symmetric_pairs_elegant(inp_dic):
 
-    pairs = [(key,value) for key,value in inp_dic.items()]
+    #pairs = [(key,value) for key,value in inp_dic.items()]
+
+    # can be made faster by changing to set instead of list
+    pairs = {(key,value) for key,value in inp_dic.items()}
     print pairs
     answer = [pair for pair in pairs if (pair[1], pair[0]) in pairs]
     print(answer)
