@@ -58,7 +58,8 @@ def remove_duplicates_fromstring_sorting(input_str):
 
 def remove_duplicates_fromstring_hashing(input_str):
 
-    Ar = toMutable(input_str)
+    #Ar = toMutable(input_str)
+    Ar = list(input_str)
 
     hash_ar = []
     result = []
