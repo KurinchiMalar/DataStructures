@@ -52,6 +52,49 @@ def find_element_which_appeared_maximum_overall(input_set):
         elem : [] # this list is used to put a 1 in indices of corresponding set_counter.
 
                   # Just to indicate this element has occured in which set. If already set in set1(say) we can ignore. This is a duplicate.
+
+        Example:
+        ------------------------------------------
+set:(4, 6, 1, 6)setcounter:1
+element:4
+hashtable[elem][0, 1, 0, 0, 0]
+element:6
+hashtable[elem][0, 1, 0, 0, 0]
+element:1
+hashtable[elem][0, 1, 0, 0, 0]
+element:6
+hashtable[elem][0, 1, 0, 0, 0]
+------------------------------------------
+set:(1, 3, 9, 5)setcounter:2
+element:1
+hashtable[elem][0, 1, 1, 0, 0]
+element:3
+hashtable[elem][0, 0, 1, 0, 0]
+element:9
+hashtable[elem][0, 0, 1, 0, 0]
+element:5
+hashtable[elem][0, 0, 1, 0, 0]
+------------------------------------------
+set:(1, 7, 7, 9)setcounter:3
+element:1
+hashtable[elem][0, 1, 1, 1, 0]
+element:7
+hashtable[elem][0, 0, 0, 1, 0]
+element:7
+hashtable[elem][0, 0, 0, 1, 0]
+element:9
+hashtable[elem][0, 0, 1, 1, 0]
+------------------------------------------
+set:(4, 4, 4, 2)setcounter:4
+element:4
+hashtable[elem][0, 1, 0, 0, 1]
+element:4
+hashtable[elem][0, 1, 0, 0, 1]
+element:4
+hashtable[elem][0, 1, 0, 0, 1]
+element:2
+hashtable[elem][0, 0, 0, 0, 1]
+{1: [0, 1, 1, 1, 0], 2: [0, 0, 0, 0, 1], 3: [0, 0, 1, 0, 0], 4: [0, 1, 0, 0, 1], 5: [0, 0, 1, 0, 0], 6: [0, 1, 0, 0, 0], 7: [0, 0, 0, 1, 0], 9: [0, 0, 1, 1, 0]}
 '''
 '''
 Space Complexity -
