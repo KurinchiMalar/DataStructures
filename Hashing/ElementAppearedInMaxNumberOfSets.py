@@ -106,9 +106,23 @@ n = 4
 
 Hashtable : O(n)
 
+
 Then for every n, there is O(m) list
 
 n*O(m) = O(mn) = O(n)
+
+WorstCase: Say all elements are distinct in every set.
+
+    Space Complexity:
+
+    Hashtable : O(mn)
+                then for every mn we create a m list
+
+                ==> O(mn *m)
+    Time Complexity:
+
+            Iterate through hashtable O(mn)*m (through list)
+
 '''
 def create_new_list(set_counter, numberofsets):
 
