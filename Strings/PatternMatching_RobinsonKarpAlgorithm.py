@@ -18,7 +18,7 @@ Robinson-Karp String Matching Algorithm.
 
 '''
 
-# Time Complexity : O(m + n)
+# Time Complexity : O(mn)    Every n is compared with m
 
 def match_given_pattern(inputstring,pattern):
 
