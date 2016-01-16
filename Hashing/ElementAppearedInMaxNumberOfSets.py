@@ -77,8 +77,11 @@ def find_element_which_appeared_in_max_sets(input_set):
     set_counter = 0
     hash_table = {}
     for set in input_set:
+        print "------------------------------------------"
         set_counter = set_counter + 1
+        print "set:"+str(set)+"setcounter:"+str(set_counter)
         for elem in set:
+            print "element:"+str(elem)
             if elem not in hash_table:
                 hash_table[elem] = create_new_list(set_counter,input_set.__len__()) # if there are 3 sets, we need 0,1,2,3 indices
             else:
@@ -87,7 +90,7 @@ def find_element_which_appeared_in_max_sets(input_set):
                 if existing_list[set_counter] != 1:  # already set --> duplicate so ignore, set only if not set already.
                     existing_list[set_counter] = 1
                 hash_table[elem] = existing_list
-
+            print "hashtable[elem]"+str(hash_table[elem])
     print hash_table
 
     max_count = 0
@@ -113,8 +116,9 @@ def find_element_which_appeared_in_max_sets(input_set):
 
 #input_set = {(5,4),(3,2),(4,3),(8,3)}
 
-input_set = {(5,5,5,2),(2,3,4,6)}
-#input_set = {(1,3,9,5),(4,4,4,2),(4,6,1,6),(1,7,7,9)}
+#input_set = {(5,5,5,2),(2,3,4,6)}
+input_set = {(1,3,9,5),(4,4,4,2),(4,6,1,6),(1,7,7,9)}
+
 #print ""+str(find_element_which_appeared_in_max_sets(input_set))
 #print ""+str(find_element_which_appeared_in_maximum_overall_elegant(input_set))
 
