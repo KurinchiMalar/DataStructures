@@ -33,6 +33,7 @@ item:ab elems[i]: c
 
 Process finished with exit code 0
 '''
+# Time Complexity : O(n*n)
 
 def get_combinations_iterative(inputstring):
 
