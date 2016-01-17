@@ -33,7 +33,8 @@ item:ab elems[i]: c
 
 Process finished with exit code 0
 '''
-# Time Complexity : O(n*n)
+# Time Complexity : O(2 pow(n))
+# http://www.algebra.com/algebra/homework/Permutations/Permutations.faq.question.97167.html
 
 def get_combinations_iterative(inputstring):
 
