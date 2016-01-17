@@ -14,7 +14,7 @@ def toMutable(inputstring):
 
 def remove_duplicates_fromstring_bruteforce(input_str):
     Ar = toMutable(input_str)
-    print Ar
+    #print Ar
     result = []
     result.append(Ar[0])
 
@@ -71,12 +71,12 @@ def remove_duplicates_fromstring_hashing(input_str):
 
     return result
 
-input_str = "ge41eks4fo7r1geeks"
+input_str = "geeksforgeeks"
 #input_str = "bananas"
 
 #print ""+str(remove_duplicates_fromstring_bruteforce(input_str))
 
-#print ""+str(remove_duplicates_fromstring_sorting(input_str))
+print ""+str(remove_duplicates_fromstring_sorting(input_str))
 
 print ""+str(remove_duplicates_fromstring_hashing(input_str))
 
