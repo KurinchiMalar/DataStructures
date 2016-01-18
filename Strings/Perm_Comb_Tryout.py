@@ -3,19 +3,21 @@ __author__ = 'kurnagar'
 # Permutations Complexity : O(n*n!)
 # Combinations Complexity : O(2 pow n)
 
-def get_permutations_recursive(Ar,k):
+def get_permutations_recursive(Ar,k,result):
 
     if k >= len(Ar):
 
-        print "".join(Ar)
-        return
+        #print "".join(Ar)
+        result.append("".join(Ar))
+        return result
 
 
     for i in range(k,len(Ar)):
 
         Ar[i],Ar[k] = Ar[k],Ar[i] # fixing current k.
-        get_permutations_recursive(Ar,k+1)   #   current k+1 becomes next i.
+        get_permutations_recursive(Ar,k+1,result)   #   current k+1 becomes next i.
         Ar[i],Ar[k] = Ar[k],Ar[i]
+    return result
 
 def get_permutations_iterative(Ar):
 
@@ -32,7 +34,7 @@ def get_permutations_iterative(Ar):
         level = nList
 
 
-    print level
+    return level
 
 def get_combinations_recursive(Ar,tempresult,result,idx):
 
@@ -63,18 +65,22 @@ def get_combinations_iterative(Ar):
 
         level += nList
 
-    print level
+    return level[1:]
 
 mystr = "abc"
 
-#get_permutations_recursive(list(mystr),0)
-#get_permutations_iterative(list(mystr))
+
+result = get_permutations_recursive(list(mystr),0,[])
+print "Permutations Recursive: "+str(result)
+
+result = get_permutations_iterative(list(mystr))
+print "Permutations Iterative: "+str(result)
 
 result = get_combinations_recursive(list(mystr),"",[],0)
-print result
+print "Combinations Recursive: "+str(result)
 
-get_combinations_iterative(list(mystr))
-
+result = get_combinations_iterative(list(mystr))
+print "Combinations Iterative: "+str(result)
 
 
 
