@@ -5,8 +5,8 @@ Number of railway-platforms:
     We need to find the minimum number of platforms so that all the trains can be accomodated as per their schedule.
 '''
 
-# Time Complexity : O(n)
-# Space Complexity : O(n)
+# Time Complexity : O(nlogn) # sorting
+# Space Complexity : O(n) # for count array
 
 def get_max_platforms_required(arr,dep):
 
