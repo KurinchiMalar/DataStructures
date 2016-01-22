@@ -34,14 +34,15 @@ print ""+str(fibo_dynamic(4))
 # Space Complexity : O(1)
 def fibo_dynamic_optimised(n):
 
-    if n == 0:
-        return 0
-
-    if n == 1:
-        return 1
-
     a = 0
     b = 1
+
+    if n == 0:
+        return a
+
+    if n == 1:
+        return b
+
     for i in range(2,n+1):
         a,b = b,a+b
 
