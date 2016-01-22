@@ -6,6 +6,20 @@ __author__ = 'kurnagar'
 # Time Complexity : O(n*n)
 # Space Complexity : O(n*n)
 
+'''
+Algorithm:
+
+1) Fill all diagonal to 1. lcps[i][i] = 1  # meaning single letter palindrome (lvl = 1)
+
+2) if Ar[i] == Ar[j]:
+        lcps[i][j] = lcps[i+1][j-1] + 2     # 2 means, say i corresponds to a , then j also will be a .. so we have a   a
+    else:
+        lcps[i][j] = max(lcps[i][j-1],lcps[i+1][j])   # take the max
+
+3)  lcps[0][n-1] is the answer.
+
+'''
+
 def get_length_of_longest_palindromic_subsequence(Ar):
 
     n = len(Ar)
@@ -33,8 +47,37 @@ def get_length_of_longest_palindromic_subsequence(Ar):
             j = j + 1
         lvl = lvl + 1
 
-    return lcps[0][n-1]
+    max_pali_seq_len = lcps[0][n-1]
+    result = [0]* max_pali_seq_len
+    i = 0
+    j = n-1
+
+    start = 0
+    end = max_pali_seq_len  - 1
+
+    while i < n and  j >= 0:
+
+        if lcps[i][j] == 0:
+            break
+
+        if lcps[i+1][j] == lcps[i][j-1]: # Move diagonal
+            if lcps[i+1][j] != lcps[i][j]: # if equal dont append just move.
+                result[start] = Ar[i]
+                result[end] = Ar[j]
+                start = start + 1
+                end = end - 1
+            i = i + 1
+            j = j - 1
+        else:
+            if lcps[i+1][j] > lcps[i][j-1]:
+                i = i + 1
+            else:
+                j = j -1
+
+    return lcps[0][n-1],result
 
 mystr = "agbdba"
-print "Length of longest palindromic subseq : "+str(get_length_of_longest_palindromic_subsequence(list(mystr)))
+length,result = get_length_of_longest_palindromic_subsequence(list(mystr))
+print "Longest palindromic subseq : "+str(result)
+print "Length of longest palindromic subseq : "+str(length)
 
