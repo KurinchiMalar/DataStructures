@@ -23,9 +23,9 @@ def check_if_subset_exists_with_given_sum_recusive(Ar,n,sum):
     # ignore or accept
     return check_if_subset_exists_with_given_sum_recusive(Ar,n-1,sum) or check_if_subset_exists_with_given_sum_recusive(Ar,n-1,sum-Ar[n-1])
 
-Ar = [1,3,9,2]
-sum = 29
-print "Subset exist? Recursive: "+str(check_if_subset_exists_with_given_sum_recusive(Ar,len(Ar),sum))
+#Ar = [1,3,9,2]
+#sum = 29
+#print "Subset exist? Recursive: "+str(check_if_subset_exists_with_given_sum_recusive(Ar,len(Ar),sum))
 
 # Time Complexity : O(n*S)  Where n is the length of input and S is the given sum
 # Space Complexity : O(n*S)
@@ -86,7 +86,7 @@ def check_if_subset_exists_with_given_sum(Ar,sum):
     result = []
     i = len(Ar)
     j = sum
-    #print T
+    print T
     while i >= 0 and j >= 0:
         if i == 0 or j == 0:
             break
@@ -96,6 +96,7 @@ def check_if_subset_exists_with_given_sum(Ar,sum):
             result.append(Ar[i-1])
             j = j - Ar[i-1]
             i = i - 1
+
         else:    # T[i][j] = 1 and T[i-1][j] = 1 implies, there is someother value contributing to the subset whose 1 we have copied...so go up to find that value.
             i = i - 1
 
@@ -108,8 +109,11 @@ sum = 5
 
 Ar = [3,2,4,19,3,7,13,10,6,11]
 sum = 17
-#print "Given Ar: "+str(Ar)+" sum : "+str(sum)
-#result,isExists = check_if_subset_exists_with_given_sum(Ar,sum)
-#print "Subset exists? : "+str(isExists)
-#print "Subset is :"+str(result)
+
+Ar = [1,5,11,5]
+sum = 11
+print "Given Ar: "+str(Ar)+" sum : "+str(sum)
+result,isExists = check_if_subset_exists_with_given_sum(Ar,sum)
+print "Subset exists? : "+str(isExists)
+print "Subset is :"+str(result)
 
