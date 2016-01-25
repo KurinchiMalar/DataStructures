@@ -8,6 +8,24 @@
         Yes ...[ 4 + 13 ]
 
 '''
+# Time Complexity: O(2 pow n)
+
+def check_if_subset_exists_with_given_sum_recusive(Ar,n,sum):
+
+    if sum == 0:
+        return 1
+    if n == 0 and sum != 0:
+        return 0
+
+    if Ar[n-1]> sum: # ignore
+        return check_if_subset_exists_with_given_sum_recusive(Ar,n-1,sum)
+
+    # ignore or accept
+    return check_if_subset_exists_with_given_sum_recusive(Ar,n-1,sum) or check_if_subset_exists_with_given_sum_recusive(Ar,n-1,sum-Ar[n-1])
+
+Ar = [1,3,9,2]
+sum = 29
+print "Subset exist? Recursive: "+str(check_if_subset_exists_with_given_sum_recusive(Ar,len(Ar),sum))
 
 # Time Complexity : O(n*S)  Where n is the length of input and S is the given sum
 # Space Complexity : O(n*S)
@@ -90,8 +108,8 @@ sum = 5
 
 Ar = [3,2,4,19,3,7,13,10,6,11]
 sum = 17
-print "Given Ar: "+str(Ar)+" sum : "+str(sum)
-result,isExists = check_if_subset_exists_with_given_sum(Ar,sum)
-print "Subset exists? : "+str(isExists)
-print "Subset is :"+str(result)
+#print "Given Ar: "+str(Ar)+" sum : "+str(sum)
+#result,isExists = check_if_subset_exists_with_given_sum(Ar,sum)
+#print "Subset exists? : "+str(isExists)
+#print "Subset is :"+str(result)
 
