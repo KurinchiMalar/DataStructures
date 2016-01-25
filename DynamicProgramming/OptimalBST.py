@@ -40,6 +40,7 @@ def find_minimum_cost(inputAr,freqAr):
     i = 0
     j = 0
     level = 1
+    root_dic = [[-1]*n for x in range(n)]
     while i < n and j < n:
         T[i][j] = freqAr[i]
         i = i + 1
@@ -71,10 +72,12 @@ def find_minimum_cost(inputAr,freqAr):
                 final = sum + leftsum + rightsum
 
                 if T[i][j] > final:
+                    root_dic[i][j] = k
                     T[i][j] = final
         level = level + 1
 
     #print T
+    print "Root dic:"+str(root_dic)
     return T[0][n-1]
 
 inputAr = [10,12,16,21]
