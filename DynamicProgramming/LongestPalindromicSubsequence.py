@@ -44,7 +44,7 @@ def get_length_of_longest_palindromic_subsequence(Ar):
                 lcps[i][j] = lcps[i+1][j-1] + 2
             else:
                 lcps[i][j] = max(lcps[i][j-1],lcps[i+1][j])
-            j = j + 1
+
         lvl = lvl + 1
 
     max_pali_seq_len = lcps[0][n-1]
