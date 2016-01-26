@@ -5,6 +5,12 @@
             insert a character into A
             replace some character in A into a new character.
     The minimal number of such operations required to transform A into B is called the edit distance between A and B.
+
+
+         if B[i-1] == A[j-1]:
+                T[i][j] = T[i-1][j-1]
+            else:
+                T[i][j] = 1 + min(T[i-1][j-1],T[i][j-1],T[i-1][j])  #   ---> same logic will be used in Maximum size square matrix with all 1's.
 '''
 
 # Time Complexity : O(m * n)
