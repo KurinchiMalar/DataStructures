@@ -66,7 +66,7 @@ def get_len_longest_pali_subseq(Ar):
 
     print result
 
-    return T[0][n-1]
+    print T[0][n-1]
 
 Ar = "banana"
 get_len_longest_pali_subseq(Ar)
