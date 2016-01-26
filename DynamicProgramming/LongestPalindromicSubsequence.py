@@ -62,7 +62,8 @@ def get_length_of_longest_palindromic_subsequence(Ar):
             break
 
         if lcps[i+1][j] == lcps[i][j-1]: # Move diagonal
-            if lcps[i+1][j] != lcps[i][j]: # if not equal then it should have a +2 from diagonal, so append to result and move diagonal..
+            #if lcps[i+1][j] != lcps[i][j]: # if not equal then it should have a +2 from diagonal, so append to result and move diagonal..
+            if Ar[i] == Ar[j]:
                 result[start] = Ar[i]
                 result[end] = Ar[j]
                 start = start + 1
