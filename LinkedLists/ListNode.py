@@ -20,3 +20,7 @@ class ListNode:
 
     def has_next(self):
         return self.next != None
+
+    # __str__ returns string equivalent of Object
+    def __str__(self):
+        return "Node[Data = %s]" % (self.data,)

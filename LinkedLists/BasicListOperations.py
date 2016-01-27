@@ -139,6 +139,7 @@ def delete_given_data(node,data):
     return node
 
 head = ListNode.ListNode(1)
+#print ListNode.ListNode.__str__(head)
 n1 = ListNode.ListNode(2)
 n2 = ListNode.ListNode(3)
 n3 = ListNode.ListNode(4)
