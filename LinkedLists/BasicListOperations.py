@@ -147,8 +147,8 @@ n4 = ListNode.ListNode(5)
 n5 = ListNode.ListNode(6)
 n6 = ListNode.ListNode(7)
 
-orig_head = ListNode.ListNode(1)
-orig_head.set_next(n1)
+#orig_head = ListNode.ListNode(1)
+#orig_head.set_next(n1)
 
 head.set_next(n1)
 n1.set_next(n2)
