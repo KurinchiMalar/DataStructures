@@ -1,6 +1,7 @@
 __author__ = 'kurnagar'
 
 import ListNode
+import Stack
 
 def get_length(node):
 
@@ -45,23 +46,29 @@ def find_node_at_intersection(head1,head2):
 
     return None
 
+# Time Complexity : O(m + n) for scanning two lists. m and n are the sizes of two lists.
+# Space Complexity : O(m + n) for two stacks.
+def find_node_at_intersection_stacks_method(head1,head2):
 
+    stack1 = Stack.Stack()
+    stack2 = Stack.Stack()
 
+    while head1 != None:
+        stack1.push(head1.get_data())
+        head1 = head1.get_next()
 
+    while head2 != None:
+        stack2.push(head2.get_data())
+        head2 = head2.get_next()
 
+    stack1.print_stack()
+    stack2.print_stack()
 
-
-
-
-
-
-
-
-
-
-
-
-
+    while stack1.size > 0 and stack2.size > 0:
+        if stack1.peek() != stack2.peek():
+            return pop_elem
+        pop_elem = stack1.pop()
+        stack2.pop()
 
 head1 = ListNode.ListNode(1)
 #print ListNode.ListNode.__str__(head)
@@ -101,3 +108,5 @@ m7.set_next(m8)
 m8.set_next(n4)
 
 print "Node at intersection: "+str(find_node_at_intersection(head1,head2))
+
+print "Node at intersection using stack method: "+str(find_node_at_intersection_stacks_method(head1,head2))
