@@ -1,5 +1,6 @@
 '''
     Convert a binary tree to doubly linked list.
+    # http://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/
 '''
 
 # Time Complexity : O(nlogn)   # for every treenode we are finding the inorder predecessor and successor
@@ -44,6 +45,7 @@ def invoke_convertbsttodll(root):
 
     root = convert_bt_to_dll(root)
 
+    # the above convert_bt_to_dll will give us the tree root. We need to get the dll head...which is ideally the leftmost node.
     while root.get_left() != None:
         root = root.get_left()
 
