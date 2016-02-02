@@ -2,6 +2,7 @@
 Give a function to check if linked list is palindrome or not.
 '''
 import ListNode
+import Stack
 def reverse_recursive(node):
 
     if node == None:
@@ -56,10 +57,10 @@ def compare_lists(list1,list2):
 def chec_pali(node):
 
     if node == None:
-        return
+        return 1
 
     if node.get_next() == None:
-        return True
+        return 1
 
     prev_tort = node
     tort = node
@@ -105,10 +106,53 @@ def traverse_list(node):
         current = current.get_next()
     print
 
+
+# Time Complexity : O(n)
+# Space Complexity : O(n)
+def chec_pali_stackmethod(node):
+
+    if node == None:
+        return 1
+
+    if node.get_next() == None:
+        return 1
+
+    stack = Stack.Stack()
+    prev_tort = node
+    tort = node
+    hare = node
+
+    while hare != None and hare.get_next() != None:
+        prev_tort = tort
+        tort = tort.get_next()
+        hare = hare.get_next().get_next()
+
+    if hare != None: # odd list
+        topush = tort.get_next()
+    else:
+        topush = tort
+
+    while topush != None:
+        stack.push(topush.get_data())
+        topush = topush.get_next()
+
+    print "stack"
+    stack.print_stack()
+    print stack.size
+
+    current = node
+    while stack.size > 0:
+        if current.get_data() != stack.peek():
+            return -1
+        current = current.get_next()
+        stack.pop()
+    return 1
+
+
 head = ListNode.ListNode(1)
 #print ListNode.ListNode.__str__(head)
 n1 = ListNode.ListNode(2)
-n2 = ListNode.ListNode(7)
+n2 = ListNode.ListNode(3)
 n3 = ListNode.ListNode(4)
 n4 = ListNode.ListNode(3)
 n5 = ListNode.ListNode(2)
@@ -126,4 +170,5 @@ n5.set_next(n6)
 
 traverse_list(head)
 #head1 = reverse_recursive(head)
-print "isPalindrome: "+str(chec_pali(head))
+#print "isPalindrome: "+str(chec_pali(head))
+print "isPalindrome stackmethod: "+str(chec_pali_stackmethod(head))

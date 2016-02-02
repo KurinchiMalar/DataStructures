@@ -14,7 +14,7 @@ class Stack:
             print current.get_data(),
             current = current.get_next()
         print
-        return self.size
+        #return self.size
 
     def push(self,data):
         newnode = ListNode.ListNode(data)
