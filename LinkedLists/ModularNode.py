@@ -20,16 +20,18 @@ def find_modular_node_frombeginning(node,k):
     count = 1
     current = node
     result = None
+    crossedthrough = []
     while current != None:
         print "count : "+str(count)+" current : "+str(current)
 
         if count % k == 0:
+            crossedthrough.append(current.get_data())
             result = current # find the last element from the beginning whose n % k == 0 , so we are overwriting . we want only the last elem.
 
         current = current.get_next()
         count = count + 1
 
-
+    print "We have crossed through: (n%k)== 0 for : "+str(crossedthrough)
     return result.get_data()
 
 # Time Complexity : O(n)
