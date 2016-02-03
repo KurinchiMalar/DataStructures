@@ -43,6 +43,9 @@ def find_modular_node_fromend(node,k):
     if node == None:
         return None
 
+    if k <= 0:
+        return -1
+
     current = node
     result = None
     count = 1
