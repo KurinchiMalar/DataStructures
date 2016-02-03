@@ -10,7 +10,7 @@ def traverse_list(node):
     print
     return count
 
-# Time Complexity : O(m + n) where m and n are the lengths of the two lists
+# Time Complexity :O(min(m,n)) where m and n are the lengths of the two lists
 # Space Complexity :O(1)
 
 '''
@@ -63,7 +63,7 @@ def merge_two_sorted_lists_fourpointers(node1,node2):
 
     return mainhead
 
-# Time Complexity : O(m + n)
+# Time Complexity : O(min(m,n))
 # Space Complexity : O(1) ... 1 extra dummy node in the beginnning.
 
 '''
