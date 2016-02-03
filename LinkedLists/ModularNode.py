@@ -44,7 +44,7 @@ def find_modular_node_fromend(node,k):
         return None
 
     if k <= 0:
-        return -1
+        return None
 
     current = node
     result = None
