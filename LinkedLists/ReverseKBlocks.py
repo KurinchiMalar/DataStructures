@@ -17,7 +17,7 @@ import ListNode
 def reverse_kblocks(node,k):
 
     if node == None:
-        return
+        return node
 
     if node.get_next() == None:
         head = node
