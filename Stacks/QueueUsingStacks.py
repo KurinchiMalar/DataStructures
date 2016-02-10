@@ -95,6 +95,8 @@ q.print_queue()'''
 q.enqueue_v2(1)
 q.enqueue_v2(2)
 q.enqueue_v2(3)
+q.enqueue_v2(4)
+result.append(q.dequeue_v2())
 result.append(q.dequeue_v2())
 result.append(q.dequeue_v2())
 print result
