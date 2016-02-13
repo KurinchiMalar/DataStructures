@@ -40,11 +40,26 @@ For an element arr[i], we do not need to consider arr[i] for left index if there
 
 Similarly, if there is a greater element on right side of arr[j] then we do not need to consider this j for right index.
 
-    1) So we construct two auxiliary arrays LMin[] and RMax[] such that LMin[i] holds the smallest element on left side of arr[i] including arr[i], and RMax[j] holds the greatest element on right side of arr[j] including arr[j].
+    1) So we construct two auxiliary arrays LMin[] and RMax[]
+        such that
+            LMin[i] holds the smallest element on left side of arr[i] including arr[i],
+            and RMax[j] holds the greatest element on right side of arr[j] including arr[j].
 
-    2) After constructing these two auxiliary arrays, we traverse both of these arrays from left to right. While traversing LMin[] and RMa[] if we see that LMin[i] is greater than RMax[j],
+    2) After constructing these two auxiliary arrays,
+        we traverse both of these arrays from left to right.
+        While traversing LMin[] and RMax[]
 
-     Satisfy condition RMax[j] > Lmin[i] & go to the most minimum.... we need the max distance.
+        if we see that LMin[i] is greater than RMax[j],
+                then move i, we  dont want current i. Desired case is Ar[j] > Ar[i]
+        else:
+
+            Satisfy condition RMax[j] > Lmin[i] & go to the most minimum.... we need the max distance.
+
+
+This problem also called : Finding Spans.
+
+        Given an array A, the span S[i] of A[i] is the maximum number of consecutive elements A[j] immediately preceding A[i]
+        such that A[j] <= A[i].
 
 '''
 # Time Complexity : O(n)
