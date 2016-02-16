@@ -1,5 +1,5 @@
 '''
-    Given an array of elements, replace every element with nearest greater element on the right side of that element.
+    Given an array of elements,replace every element with nearest greater element on the right side of that element.
 '''
 
 import Stack
