@@ -3,7 +3,7 @@
 
     reoder it to: L1 -> Ln -> L2 -> Ln-1 .....
 '''
-
+import copy
 from LinkedLists import ListNode
 import Stack
 
@@ -36,11 +36,12 @@ def reorder_list_using_stack(node):
     q = p.get_next()
 
     while stack.size > 0:
-        #print stack.peek()
+        print stack.peek()
         if p == tort:
             p.set_next(None)
             break
         if q == tort:
+            p.set_next(stack.pop())
             q.set_next(None)
             break
         p.set_next(stack.pop())
@@ -173,11 +174,14 @@ n2.set_next(n3)
 n3.set_next(n4)
 n4.set_next(n5)
 n5.set_next(n6)
-
+orig_head = copy.deepcopy(head)
 traverse_list(head)
-#result = reorder_list_using_stack(head)
-#traverse_list(result)
-
+print "Stack Method"
+result = reorder_list_using_stack(head)
+traverse_list(result)
+print "-----------------"
+print "Reverse and Merge"
+head = orig_head
 #reversed = rev_list(head)
 #traverse_list(reversed)
 
