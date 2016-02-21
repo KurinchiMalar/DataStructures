@@ -12,6 +12,7 @@ Input :
 arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13}
 k = 4
 Output :
+
 10 10 10 15 15 90 90'''
 
 # Time Complexity : O(n)
