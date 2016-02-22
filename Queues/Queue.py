@@ -39,12 +39,12 @@ class Queue():
             current = current.get_next()
         print
 
-q = Queue()
+'''q = Queue()
 q.enqueue(1)
 q.enqueue(2)
 q.enqueue(3)
 q.dequeue()
 #q.dequeue()
 q.print_queue()
-print q.size
+print q.size'''
 
