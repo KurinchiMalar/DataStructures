@@ -19,8 +19,8 @@ def print_all_combinations_paranthesis(result,n,open,close):
 
     else:
         if close < open:
-            #result.append(")")
-            print_all_combinations_paranthesis(result+")",n,open,close+1)
+            #result.append(")") # this is mutable.
+            print_all_combinations_paranthesis(result+")",n,open,close+1) # this is immutable., every time new string created.
 
         if open < n :
             #result.append("(")
