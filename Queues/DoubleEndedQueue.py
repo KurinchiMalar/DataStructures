@@ -57,14 +57,16 @@ class DoublyLinkedList:
             print "Empty list, cannot be deleted!!!!!!!!!."
             return -1
         if self.head == self.tail:
+            torem = self.head
             self.head = None
             self.tail = None
             self.size = 0
-            return None
+            return torem
+        torem = self.head
         self.head = self.head.get_next()
         self.head.set_prev(None)
         self.size = self.size - 1
-        return self.head
+        return torem
 
     def delete_at_end(self):
 
@@ -72,11 +74,12 @@ class DoublyLinkedList:
             print "Empty list, cannot be deleted."
             return -1
         elif self.head == self.tail: # One node
+            torem = self.head
             self.head = None
             self.tail = None
             self.size = 0
             #print "CurTail: "+str(self.tail.get_data())
-            return None
+            return torem
         else:
             torem = self.tail
             previousNode = self.tail.get_prev()
