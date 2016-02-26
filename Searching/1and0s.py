@@ -15,7 +15,7 @@ def find_start_of_0(Ar,low,high):
 
     if low+1 == high:
         if Ar[low] != Ar[high]:
-            if Ar[low] == 1:
+            if Ar[low] == 0:
                 return low
             else:
                 return high

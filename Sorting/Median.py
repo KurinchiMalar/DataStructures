@@ -55,4 +55,4 @@ tempAr = Ar[:]
 
 #print "Median in sorting logic: "+str(getMedian_SortingLogic(tempAr))
 
-#print "Median in Linear time: "+str(getMedian_LinearTime(Ar))
+print "Median in Linear time: "+str(getMedian_LinearTime(Ar))

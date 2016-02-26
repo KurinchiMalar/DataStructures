@@ -20,6 +20,7 @@ def find_three_elements_sum_k_bruteforce(Ar,k1):
 
 def find_three_elements_sum_k_sorting(Ar,k):
     tempAr = Ar[:]
+    Ar = mergesort(Ar)
     elem_list = []
     for i in range(0,len(Ar)-2):
         low = i
@@ -41,7 +42,7 @@ def find_three_elements_sum_k_sorting(Ar,k):
 # Space Complexity : O(n)
 
 
-Ar = [1,6,45,4,10,18]
+Ar = [1,6,45,4,10,18,34,29,2,5]
 
 #print "" + str(find_three_elements_sum_k_bruteforce(Ar,50))
-print "" + str(find_three_elements_sum_k_sorting(Ar,50))
+print "" + str(find_three_elements_sum_k_sorting(Ar,11))

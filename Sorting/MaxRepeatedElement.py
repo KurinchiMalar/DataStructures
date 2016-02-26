@@ -25,6 +25,7 @@ def get_max_repeated_element_SortAndScan(Ar):
             print "max:"+str(Ar[i])
             max_counter = count
             max_elem = Ar[i]
+        i = j
 
     print "MaxElem: "+str(max_elem)+"occured"+str(max_counter)+"times"
 
@@ -157,12 +158,12 @@ def get_repeated_hashing(Ar,k):
 
 
 
-#Ar = [4,6,3,5,1,5,3,5,6,1,5,3,3,5]
-#get_max_repeated_element_SortAndScan(Ar)
+Ar = [4,6,3,5,1,5,3,5,6,1,5,3,3,5]
+get_max_repeated_element_SortAndScan(Ar)
 
-Ar = [80,30,90,80,90,80,70,90,80]
-r = create_bst(Ar)
-print "result"+str(r.key)
+#Ar = [80,30,90,80,90,80,70,90,80]
+#r = create_bst(Ar)
+#print "result"+str(r.key)
 
 #inorder_bst(r)
 

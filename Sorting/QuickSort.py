@@ -34,8 +34,9 @@ def quick_sort(Ar,low,high):
         print ("quick("+str(low)+","+str(pivot-1)+")")
         print ("quick("+str(pivot+1)+","+str(high)+")")
         print("----------------------------------------")
-        quick_sort(Ar,low,pivot-1)
-        quick_sort(Ar,pivot+1,high)
+        return quick_sort(Ar,low,pivot-1)
+        return quick_sort(Ar,pivot+1,high)
+    return Ar
 
 Ar = [5,2,4,1,7,3,9]
 quick_sort(Ar,0,len(Ar)-1)

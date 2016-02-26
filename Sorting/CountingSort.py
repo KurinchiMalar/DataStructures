@@ -1,3 +1,5 @@
+# Time Complexity : O(n+k)
+# Space Complexity : O(n+k)
 def counting_sort(Ar,k):
     B = [0 for el in Ar]
     C = [0 for el in range(0,k+1)]
