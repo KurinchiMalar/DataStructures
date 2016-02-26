@@ -23,7 +23,7 @@ def find_three_elements_sum_k_sorting(Ar,k):
     Ar = mergesort(Ar)
     elem_list = []
     for i in range(0,len(Ar)-2):
-        low = i
+        low = i+1
         high = len(Ar)-1
 
         while low < high:
