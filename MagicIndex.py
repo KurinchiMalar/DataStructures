@@ -21,7 +21,7 @@ def magic_index(Ar,first,last):
     if Ar[middle] == middle:
         return middle
 
-    if Ar[middle] < middle:
+    if Ar[middle] > middle:
         return magic_index(Ar,first,middle-1)
 
     return magic_index(Ar,middle+1,last)
