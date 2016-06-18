@@ -1,5 +1,6 @@
 
 # Time Complexity : O(2 pow (n))
+# Space Complexity : O(2 pow (n))
 
 def get_power_set(input):
 
