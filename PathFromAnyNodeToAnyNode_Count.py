@@ -3,7 +3,7 @@ Given a BT , in which each node contains an integer value(positive or negative).
 paths that sum to a given value. The path need not need to start or end at the root or a leaf.
 '''
 # Time Complexity : O(n)
-# Hash Table : O(log n)
+# Hash Table : O(log n) At any time there will be max of height of tree, number of nodes.
 class BTNode:
     def __init__(self,data):
         self.data = data
