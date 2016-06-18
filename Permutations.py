@@ -1,5 +1,11 @@
 
-
+'''
+k = level (0,1,2) for ABC
+i = iterate at a node. At k =0 , i = 0,1,2
+                          k = 1, i = 1,2
+                            k = 2 ==> print Ar
+'''
+# Time Complexity : O(n!)
 def permute(Ar,k,n):
 
     if k >= n:
