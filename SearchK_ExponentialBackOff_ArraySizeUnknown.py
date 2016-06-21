@@ -3,7 +3,6 @@ hop = 1
 start = orig_start + hop
 hop = 2 * hop
 '''
-
 def getElementAtIndex(Ar,i):
 
     return Ar[i]
