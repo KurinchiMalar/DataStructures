@@ -1,0 +1,70 @@
+'''
+	1 2 3
+	4 5 6
+	7 8 9
+
+
+	n = 3
+
+	square level run= 3/2 = 1 time
+		level = 0
+		m = n - 1
+
+	OuterSquare
+		Run upto m(2) two times
+
+	  level,p -> p,m -> m,q -> q,level
+	 0,0 -> 0,2 -> 2,2 --> 2,0
+	 0,1 --> 1,2 -> 2,1 --> 1,0
+
+'''
+# level,p -> p,m -> m,q -> q,level
+
+def swap(Ar, level, p, q, m):
+    temp1 = Ar[p][m]
+    Ar[p][m] = Ar[level][p]
+
+    temp2 = Ar[m][q]
+    Ar[m][q] = temp1
+
+    Ar[level][p] = Ar[q][level]
+    Ar[q][level] = temp2
+
+
+# Time Complexity : O(n*n)
+def rotate(Ar,n):
+
+    limit = (int)(n / 2)
+    for level in range(limit):  # 0
+
+        m = n - 1
+
+        for p in range(level, m):
+            q = n - 1 - p
+
+            swap(Ar, level, p, q, m)
+
+#Ar = [[y for y in range(6)] for x in range(6)]
+Ar = [[1,2,3],
+	  [4,5,6],
+	  [7,8,9]]
+print(str(Ar))
+rotate(Ar,len(Ar))
+print(str(Ar))
+print("----------------------------")
+Ar1 = [[0, 1, 2, 3, 4, 5],
+      [10, 11, 12, 13, 14, 15],
+      [20, 21, 22, 23, 24, 25],
+      [30, 31, 32, 33, 34, 35],
+      [40, 41, 42, 43, 44, 45],
+      [50, 51, 52, 53, 54, 55]]
+
+print(str(Ar1))
+rotate(Ar1,len(Ar1))
+print(str(Ar1))
+print("----------------------------")
+Ar2 = [[1,2],
+	  [3,4]]
+print(str(Ar2))
+rotate(Ar2,len(Ar2))
+print(str(Ar2))
