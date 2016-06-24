@@ -20,6 +20,14 @@
 '''
 # level,p -> p,m -> m,q -> q,level
 
+def print_matrix(Ar):
+
+    for i in range(len(Ar)):
+        for j in range(len(Ar)):
+            print(Ar[i][j],end=' ')
+        print()
+    print()
+
 def swap(Ar, level, p, q, m):
     temp1 = Ar[p][m]
     Ar[p][m] = Ar[level][p]
@@ -48,9 +56,10 @@ def rotate(Ar,n):
 Ar = [[1,2,3],
 	  [4,5,6],
 	  [7,8,9]]
-print(str(Ar))
+#print(str(Ar))
+print_matrix(Ar)
 rotate(Ar,len(Ar))
-print(str(Ar))
+print_matrix(Ar)
 print("----------------------------")
 Ar1 = [[0, 1, 2, 3, 4, 5],
       [10, 11, 12, 13, 14, 15],
@@ -59,12 +68,12 @@ Ar1 = [[0, 1, 2, 3, 4, 5],
       [40, 41, 42, 43, 44, 45],
       [50, 51, 52, 53, 54, 55]]
 
-print(str(Ar1))
+print_matrix(Ar1)
 rotate(Ar1,len(Ar1))
-print(str(Ar1))
+print_matrix(Ar1)
 print("----------------------------")
 Ar2 = [[1,2],
 	  [3,4]]
-print(str(Ar2))
+print_matrix(Ar2)
 rotate(Ar2,len(Ar2))
-print(str(Ar2))
+print_matrix(Ar2)
